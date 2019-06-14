@@ -7,6 +7,16 @@ This challenge tests you on having a fully functional app that is deployed somew
 ## The Stack
 suggested STACK is Angular, Nodejs, Firebase(auth/hosting)
 
+## The Process
+
+1. Fork this GitHub repo
+1. In your forked repo, set up a new Cypress environment
+1. Write some end-to-end tests fulfilling the [Acceptance Description](#acceptance-description) below
+1. Create a pull request from your fork into this original repository.
+1. In your pull request description, please document how to run the code you've written and how to verify the fulfillment of the acceptance criteria. Feel free to add additional thoughts, e.g. why you implemented a feature in a certain way, what were your learnings, etc.
+1. Mention @c-gray, @faisalnwz or @miltonlopezjr in the pull request description to let us know you're ready for review.
+
+
 ## What you'll need
 You can use Google, your Github profile, peek into your older projects or use any code sharing websites you find relevant.
 
