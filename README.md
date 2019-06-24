@@ -1,59 +1,55 @@
 # Virtual Facility Coding Challenge
 
 ## The Goal
-
 This challenge tests you on having a fully functional app that is deployed somewhere and/or published code in github, and you are comfortable with routing, authorization, feature modules, architecture, style guide.
 
 ## The Stack
 suggested STACK is Angular, Nodejs, Firebase(auth/hosting)
 
 ## The Process
-
 1. Fork this GitHub repo
 1. In your forked repo, Setup a new Angular Environment
 1. Create a pull request from your fork into this original repository.
 1. In your pull request description, please document how to run the code you've written and how to verify the fulfillment of the acceptance criteria. Feel free to add additional thoughts, e.g. why you implemented a feature in a certain way, what were your learnings, etc.
 1. Mention @c-gray, @faisalnwz or @miltonlopezjr in the pull request description to let us know you're ready for review.
 
-
 ## What you'll need
 You can use Google, your Github profile, peek into your older projects or use any code sharing websites you find relevant.
 
 You can use BLOB example below. ~500 words.
 
-
 ## Assignment Description
-     Develop a Backend + Front-end solution that allows your user to annotate a blob of text.  
-     
-    The user wants to be able to select a substring of the text document and persist the selection to the server.
-    
-    You will notice that the substring users wants to edit is in Template literal.
-    
-    Have a SIMPLE auth system with the ability to login/logout/change password.
+Develop a Full-Stack application that lets a user to annotate a blob of text.
 
-    KEEP IT SIMPLE!
-    Try to ship as few bugs as possible.
-    Focus on a simple design interface. Functionality takes priority over design.
+The user can select some text from the document and persist the selection to the server.
 
-Task 1
-    Allow the user to supply a text blob of ~500 words.
+You will notice that the substring users wants to edit is in template literal.
 
-    Be able to supply defaults for substrings.
+Use a **simple** auth system to login/logout/change password.
 
-    Be able to view text blob and edit substrings.
+**KEEP IT SIMPLE!**
+Try to ship as few bugs as possible.
 
-    The text blob is persisted to server and displayed on the page when the page is reloaded, loaded in a different browser.
+Focus on a simple design interface. Functionality takes priority over design.
 
- Task 2
-    All data is persisted on the server. When the user logs back in the user should be able to view and edit the stored blobs.
+###Task 1
+Allow the user to supply a text blob of ~500 words.
 
-Task 3
-    The user may wish to assign the blobs into categories/tags.
+Be able to supply defaults for substrings.
 
-    This is open-ended task you can design/implement it any way you see fit.
-    
-    Done!
+Be able to view text blob and edit substrings.
 
+The text blob is persisted to server and displayed on the page when the page is reloaded, loaded in a different browser.
+
+###Task 2
+All data is persisted on the server. When the user logs back in, they'll have the ability to view and edit the stored blobs of text.
+
+###Task 3
+The user may wish to tag the blobs of text by category.
+
+This is open-ended task so feel free to design and implement it any way you see fit.
+
+###Done!
 
 TEXT_BLOB_EXAMPLE
 `Lorem ipsum dolor sit amet, ${FIRST_EDITABLE_FIELD} adipiscing elit. Aenean dictum elementum purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Ut porta venenatis velit, ac scelerisque nisi lobortis eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In pellentesque elementum dolor vel aliquam. Integer maximus mattis nisi non efficitur. Nam elementum venenatis nibh sed feugiat. Aliquam a diam sed nulla lobortis sollicitudin ac vel lorem.
