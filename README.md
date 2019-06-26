@@ -30,19 +30,19 @@ Try to ship as few bugs as possible.
 
 Focus on a simple design interface. Functionality takes priority over design.
 
-###Task 1
+### Task 1
 
 Allow users to be able to highlight some text and give them an option to annotate.
 
-###Task 2
+### Task 2
 The annotations should be persisted on the server. When the user logs back in, they'll have the ability to view and edit the the annotations.
 
-###Task 3
+### Task 3
 The user may wish to tag the annotations by category. So allow the users to add tag to those annotations.
 
 This is open-ended task so feel free to design and implement it any way you see fit.
 
-###Done!
+### Done!
 
 TEXT_BLOB_EXAMPLE
 `Lorem ipsum dolor sit amet, adipiscing elit. Aenean dictum elementum purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Ut porta venenatis velit, ac scelerisque nisi lobortis eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In pellentesque elementum dolor vel aliquam. Integer maximus mattis nisi non efficitur. Nam elementum venenatis nibh sed feugiat. Aliquam a diam sed nulla lobortis sollicitudin ac vel lorem.
