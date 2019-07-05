@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="/">Virtual Facility</a>
+  <button class="navbar-toggler" type="button"
+          data-toggle="collapse" data-target="#navbarsExampleDefault"
+          aria-controls="navbarsExampleDefault" aria-expanded="false"
+          aria-label="Toggle navigation"
+          (click)="toggleCollapsed()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div *ngIf="ready" class="collapse navbar-collapse" id="navbarsExampleDefault" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+    <ul class="navbar-nav mr-auto">
+      <ng-template [ngIf]="!authService.isAuthenticated()">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/register">Register</a>
+      </li>
+      </ng-template>
+      <ng-template [ngIf]="authService.isAuthenticated()">
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/content">Content</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/reset">Change Password</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/logout">Logout</a>
+        </li>
+      </ng-template>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

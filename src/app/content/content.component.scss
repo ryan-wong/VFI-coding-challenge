@@ -1,0 +1,76 @@
+.indicator {
+	background-color: #333333 ;
+    position: absolute ;
+    color: white;
+	z-index: 2 ;
+
+	&__cta {
+		top: -20px ;
+		left: 50% ;
+		position: absolute ;
+	}
+
+	&__cta-link {
+		background-color: #333333 ;
+		border-radius: 5px 5px 5px 5px ;
+		bottom: 0px ;
+		box-shadow: 2px 2px 5px fade( #000000, 30% ) ;
+		color: #FFFFFF ;
+		cursor: pointer ;
+		left: 0px ;
+		padding: 11px 22px 10px 22px ;
+		position: absolute ;
+		transform: translateX( -50% ) ;
+		white-space: nowrap ;
+
+		&:after {
+			bottom: -11px ;
+			font-size: 15px ;
+			left: 50% ;
+			line-height: 15px ;
+			content: "▼" ;
+			color: #333333 ;
+			position: absolute ;
+			transform: translateX( -50% ) ;
+		}
+	}
+}
+
+.annotation-mode {
+	width: 350px;
+	height: 230px;
+	color: black;
+	background-color: white;
+	position: absolute;
+	right: 10px;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	padding: 5px;
+	z-index: 100;
+}
+
+.annotation-text {
+	width: 100%;
+    height: 150px;
+}
+
+.annotated-highlighted-text {
+	background-color: #FFFF00;
+}
+
+.annotation-view-button {
+	right: 10%;
+	position: absolute;
+	@media screen and (max-width: 800px) {
+		right: 1px;
+	}
+}
+
+.annotated-category {
+	color: green;
+}
+
+.annotation-viewer {
+	min-width: 700px;
+}

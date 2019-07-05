@@ -1,0 +1,46 @@
+<div class="container mt-5">
+<h1 class="text-center mt-5">Content to annotate</h1>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto annotation-viewer" (textSelect)="renderRectangles( $event )" >
+			<div [innerHTML]="displayText | safeHtml"></div>
+
+            <div
+				*ngIf="hostRectangle"
+				class="indicator"
+				[style.left.px]="hostRectangle.left"
+				[style.top.px]="hostRectangle.top"
+				[style.width.px]="hostRectangle.width"
+				[style.height.px]="0">
+				<div class="indicator__cta">
+					<a
+						(mousedown)="$event.preventDefault()"
+						(mouseup)="$event.stopPropagation(); annotateSelection()"
+						class="indicator__cta-link">
+						<fa name="comments"></fa>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div *ngIf="annotationEditMode" class="annotation-mode" [ngStyle]="annotationStyle">
+			<h6 class="text-center">Annotate below:</h6>
+			<textarea class="annotation-text" (change)="annotateUpdated($event)" [mentionConfig]="mentionConfig" [(ngModel)]="currentAnnotationString"></textarea>
+			<div class="text-center">
+				<button class="btn btn-primary" (click)="saveAnnotation()">Save</button>
+				<button class="btn btn-default" (click)="removeAnnotation()">Cancel</button>
+			</div>
+		</div>
+		<div *ngIf="annotationViewMode" class="annotation-mode" [ngStyle]="annotationStyle">
+			<h6 class="text-center">Annotate below:</h6>
+			<div class="annotation-text" [innerHTML]="currentViewAnnotationString | safeHtml"></div>
+			<div class="text-center">
+				<button class="btn btn-primary" (click)="editAnnotation(currentViewAnnotation)">Edit</button>
+				<button class="btn btn-default" (click)="removeAnnotation()">Cancel</button>
+			</div>
+		</div>
+		<div class="annotation-view-button" *ngFor="let annotation of annotationList" [ngStyle]="drawAnnotation(annotation)">
+			<fa name="comments" (click)="viewAnnotation(annotation)"></fa>
+		</div>
+    </div>
+</div>
