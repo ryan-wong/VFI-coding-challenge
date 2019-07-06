@@ -19,7 +19,7 @@ export class ResetComponent implements OnInit {
 
   createForm () {
     this.resetForm = new FormGroup({
-      password: new FormControl('', [Validators.minLength(6)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     });
   }
 

@@ -36,13 +36,15 @@ export class ContentComponent implements OnInit {
     private categoryService: CategoryService,
     private annotationService: AnnotationService,
     private authService: AuthService) {
+
+  }
+
+  ngOnInit() {
     this.text = '';
     this.displayText = '';
     this.selectedText = '';
     this.currentAnnotationString = '';
-  }
 
-  ngOnInit() {
     this.annotationEditMode = false;
     this.annotationViewMode = false;
     this.annotationStyle = {};
@@ -88,6 +90,7 @@ export class ContentComponent implements OnInit {
 
   editAnnotation(currentAnnotation: any) {
     this.resetAnnotationSettings();
+    this.currentViewAnnotation = currentAnnotation;
     this.annotationEditMode = true;
     this.annotationStyle.top = currentAnnotation.top + 'px';
     this.annotationLocation = currentAnnotation;
@@ -96,8 +99,15 @@ export class ContentComponent implements OnInit {
   }
 
   saveAnnotation () {
-    var newAnnotation = this.annotationService.createAnnotation(this.annotatedText,
+    var newAnnotation;
+    if (this.currentViewAnnotation) {
+      newAnnotation = this.annotationService.updateAnnotation(this.annotatedText,
+        this.currentAnnotationString, this.annotationLocation);
+    } else {
+      newAnnotation = this.annotationService.createAnnotation(this.annotatedText,
       this.currentAnnotationString, this.annotationLocation);
+    }
+
     this.annotationList.push(newAnnotation);
     this.contentService.saveContent(this.text, this.annotationList, this.authService.getUserId());
     this.resetAnnotationSettings();

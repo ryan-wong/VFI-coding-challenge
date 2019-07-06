@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase';
-import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
+import { FirebaseService } from '../shared/firebase.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,30 +10,31 @@ export class AuthService {
   uid: string;
   subject = new Subject<any>();
 
-  constructor() {
-    this.authChanged();
+  constructor(private firebaseService: FirebaseService) {
     this.uid = null;
+    this.token = null;
+    this.firebaseService.init();
+    this.authChanged();
   }
 
   authChanged () {
-    firebase.initializeApp(environment.firebase);
-    firebase.auth().onAuthStateChanged((user: any) => {
+    this.firebaseService.getInstance().onAuthStateChanged((user: any) => {
       if (user) {
         this.token = user.ra;
+        this.uid = user.uid;
         localStorage.setItem('token', this.token);
         localStorage.setItem('uid', user.uid);
-        this.uid = user.uid;
       }
       this.subject.next({});
     });
   }
 
   register(email: string, password: string) {
-    return firebase.auth().createUserWithEmailAndPassword(email, password).then((response: any) => {
+    return this.firebaseService.getInstance().createUserWithEmailAndPassword(email, password).then((response: any) => {
       this.token = response.ra;
-      this.uid = response.uid;
+      this.uid = response.user.uid;
       localStorage.setItem('token', this.token);
-      localStorage.setItem('uid', response.user.uid);
+      localStorage.setItem('uid', this.uid);
       return response;
     }).catch(error => {
         throw error.message;
@@ -42,13 +42,11 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    return firebase.auth().signInWithEmailAndPassword(email, password).then( (response: any) => {
-      this.token = response.ra;
-      this.uid = response.uid;
-      console.log(response);
-      console.log(response.uid);
+    return this.firebaseService.getInstance().signInWithEmailAndPassword(email, password).then( (response: any) => {
+      this.token = response.user.ra;
+      this.uid = response.user.uid;
       localStorage.setItem('token', this.token);
-      localStorage.setItem('uid', response.uid);
+      localStorage.setItem('uid', this.uid);
       return response;
     }).catch(error => {
         throw error.message;
@@ -56,7 +54,7 @@ export class AuthService {
   }
 
   reset(password: string) {
-    return firebase.auth().currentUser.updatePassword(password).then( (response: any) => {
+    return this.firebaseService.getInstance().currentUser.updatePassword(password).then( (response: any) => {
       return true;
     }).catch(error => {
         throw error.message;
@@ -64,7 +62,7 @@ export class AuthService {
   }
 
   logout() {
-    firebase.auth().signOut();
+    this.firebaseService.getInstance().signOut();
     this.token = null;
     localStorage.clear();
   }

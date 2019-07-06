@@ -21,6 +21,18 @@ export class AnnotationService {
     };
   }
 
+  updateAnnotation (selectedText: string, comment: string,
+    location : SelectionRectangleInterface) : AnnotationModel {
+    return {
+      text: selectedText.trim(),
+      comment: comment,
+      top: location.top,
+      left: location.left,
+      width: location.width,
+      height: location.height
+    };
+  }
+
   styleTags (text: string, categories: string[]) : string {
     let styledText = text;
     for (let i = 0; i < categories.length; i++) {

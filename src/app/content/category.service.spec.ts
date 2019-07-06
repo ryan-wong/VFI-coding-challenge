@@ -9,4 +9,21 @@ describe('CategoryService', () => {
     const service: CategoryService = TestBed.get(CategoryService);
     expect(service).toBeTruthy();
   });
+  it('should be have array of strings', () => {
+    const service: CategoryService = TestBed.get(CategoryService);
+    expect(service.getCategories()).toEqual([
+        'classics',
+        'crime',
+        'mystery',
+        'fantasy',
+        'horror',
+        'literary ',
+        'fiction',
+        'popular',
+        'romance',
+        'science',
+        'women',
+        'young'
+      ]);
+  });
 });

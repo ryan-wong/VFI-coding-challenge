@@ -22,9 +22,9 @@ import { HighlighttextDirective } from './content/highlighttext.directive';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ContentComponent,
-    LogoutComponent,
     ResetComponent,
+    LogoutComponent,
+    ContentComponent,
     HighlighttextDirective,
     SafeHtmlPipe
   ],

@@ -37,8 +37,8 @@
 }
 
 .annotation-mode {
-	width: 350px;
-	height: 230px;
+	width: 400px;
+	height: 300px;
 	color: black;
 	background-color: white;
 	position: absolute;
@@ -60,7 +60,7 @@
 }
 
 .annotation-view-button {
-	right: 10%;
+	right: 10px;
 	position: absolute;
 	@media screen and (max-width: 800px) {
 		right: 1px;
