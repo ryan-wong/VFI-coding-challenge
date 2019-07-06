@@ -1,27 +1,59 @@
-# Virtualfi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+# Virtual Facility Coding Challenge
 
-## Development server
+## The Goal
+This challenge tests you on having a fully functional app that is deployed and/or published in github. You should be comfortable with routing, authorization, feature modules, architecture, style guide.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## The Stack
+Angular w/o Firebase(auth/hosting)
 
-## Code scaffolding
+## The Process
+1. Fork this GitHub repo
+1. In your forked repo, Setup a new Angular Environment
+1. Create a pull request from your fork into original repository.
+1. In your pull request description, please document how to run the code you've written and how to verify the fulfillment of the acceptance criteria. Feel free to add additional thoughts, e.g. why you implemented a feature in a certain way, what were your learnings, etc.
+1. Mention @faisalnwz or @miltonlopezjr in the pull request description to let us know you're ready for review.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## What you'll need
+You can use Google, your Github profile, peek into your older projects or use any code sharing websites you find relevant.
 
-## Build
+You need text example (~500 words) below.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Assignment Description
+#### Develop an application that lets a user annotate a blob of text.
+Annotations are a powerful feature of *Medium* blog that gives the users the ability to comment, and leave notes in the margins of documents. The comments are left in the exact place where you'd want people to see them as they read.
 
-## Running unit tests
+Use a **simple** auth system to login/logout/change password.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**KEEP IT SIMPLE!**
+Try to ship as few bugs as possible.
 
-## Running end-to-end tests
+Focus on a simple design interface. Functionality takes priority over design.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Task 1
 
-## Further help
+Allow users to be able to highlight some text and give them an option to annotate.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Task 2
+The annotations should be persisted. When the user logs back in, they'll have the ability to view and edit the the annotations.
+
+### Task 3
+The user may wish to tag the annotations by category. So allow the users to add tag to those annotations.
+
+This is an open-ended task so feel free to design and implement it any way you see fit.
+
+### Done!
+
+TEXT_BLOB_EXAMPLE
+`Lorem ipsum dolor sit amet, adipiscing elit. Aenean dictum elementum purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Ut porta venenatis velit, ac scelerisque nisi lobortis eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In pellentesque elementum dolor vel aliquam. Integer maximus mattis nisi non efficitur. Nam elementum venenatis nibh sed feugiat. Aliquam a diam sed nulla lobortis sollicitudin ac vel lorem.
+
+Duis eu dui id sem dapibus sodales egestas et arcu. Aenean convallis nunc eu risus bibendum efficitur. Aenean congue sapien a tortor aliquam rhoncus. Nulla blandit suscipit justo, ac tincidunt mauris pharetra in. Phasellus congue congue convallis. Nullam feugiat nisl vel gravida rutrum. Vestibulum id quam gravida, gravida mauris id, bibendum nulla. Fusce vitae felis malesuada, mattis sem a, mattis risus.
+
+Aenean mollis, leo et consectetur tincidunt neque porttitor sapien, luctus auctor magna mi vel ante.  suscipit tortor sed leo tincidunt egestas. Integer eu dui dapibus, lacinia purus quis, tempor sem. Morbi in malesuada justo. Morbi et neque tincidunt, consectetur lacus nec, ornare velit. Ut sit amet laoreet massa. Sed a erat risus. Aenean vulputate diam augue, non egestas velit tristique id. Suspendisse potenti.
+
+Praesent sollicitudin, quam nec tempor molestie, elit  vehicula quam, fringilla fermentum massa nulla eu elit. Nullam nec egestas arcu, ac maximus odio. Integer ac vulputate libero. In ac dui eget felis laoreet placerat. Morbi dapibus turpis at enim ultricies, eget venenatis risus elementum. Cras molestie arcu eget magna tristique, nec tristique tellus venenatis. Praesent at scelerisque velit. Cras nec est magna. Vivamus vitae porta dolor. Vivamus felis dui, tincidunt ac nisl non, suscipit luctus metus.
+
+Nullam viverra ante nunc, eget ullamcorper lacus fringilla vel. Nam non dui ex. Vivamus nunc lacus, mollis eget lectus in, finibus molestie tellus. Etiam interdum libero enim, pretium laoreet mauris volutpat vel. Ut ornare ultrices velit, a rutrum odio blandit non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla pharetra odio ut nulla aliquam sagittis. Quisque nisl orci, fringilla et tellus ut, ornare vehicula nulla. Quisque condimentum et massa ut aliquam. Integer vestibulum tellus sed dui vehicula,
+
+eu elementum elit varius. Aenean libero dolor, vulputate quis vitae, laoreet sit amet felis. Pellentesque sit amet laoreet sem, sit amet scelerisque arcu. Praesent pulvinar mauris a finibus porttitor. Aenean sodales convallis mi, quis tincidunt ante consequat.`
+
